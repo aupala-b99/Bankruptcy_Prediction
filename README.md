@@ -8,9 +8,9 @@ Hi, I’m Aupala Bhattacharyya! This project is a cloud-native data pipeline I d
 
 As an analyst for **MSBA Financial Group**, I was tasked with building a prototype cloud-native data architecture in AWS. MSBA receives financial data from three different internal sources:
 
-- **Vendor Data** from DataCorp: ./datacorp_financial_data.csv
-- **Analyst A Ratios**: ./msba_fg_ratios_data.csv
-- **Analyst B Bankruptcy Records**: ./msba_fg_bankruptcy.txt
+- **Vendor Data** from DataCorp: ![datacorp_financial_data.csv](./datacorp_financial_data.csv)
+- **Analyst A Ratios**: ![msba_fg_ratios_data.csv].(/msba_fg_ratios_data.csv)
+- **Analyst B Bankruptcy Records**: ![msba_fg_bankruptcy.txt](./msba_fg_bankruptcy.txt)
 
 The new CIO requested a centralized and scalable system that would:
 
