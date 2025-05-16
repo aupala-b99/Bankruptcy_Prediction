@@ -89,9 +89,9 @@ I used SageMaker Canvas to perform auto-EDA and train a model that classifies ba
 
 Prediction files were exported as `.csv` and `.png` to Amazon S3.
 
-[Presentation](./CT_Aupala%20(1).pdf)
+🧾 [Presentation](./CT_Aupala%20(1).pdf)
 
-Narration:[Link](https://www.loom.com/share/9b369b60dbf9468585e0f5e2f1a45606?sid=43bdb728-c6b8-4fd3-a4a8-1f03f2d75381)
+🎧Narration:[Link](https://www.loom.com/share/9b369b60dbf9468585e0f5e2f1a45606?sid=43bdb728-c6b8-4fd3-a4a8-1f03f2d75381)
 
 ---
 
