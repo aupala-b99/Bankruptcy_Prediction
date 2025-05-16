@@ -1,66 +1,78 @@
 # 🏦 Bankruptcy Risk Prediction | MSBA Financial Group
 
-Hi, I’m Aupala Bhattacharyya! This project is a cloud-native data pipeline I built as part of **GENBUS 780: Cloud Technology for Business Analytics** at the Wisconsin School of Business. It leverages AWS services to predict bankruptcy risk and support investment decision-making—**with no code required**.
+Hi, I’m Aupala Bhattacharyya! This project is a cloud-native data pipeline I developed as part of **GENBUS 780: Cloud Technology for Business Analytics** at the Wisconsin School of Business. It uses AWS-native tools—no Python or SQL—to predict bankruptcy risks and help MSBA Financial Group make informed investment decisions.
 
 ---
 
 ## 📌 Project Overview
 
-As an analyst for **MSBA Financial Group**, I was responsible for designing a scalable AWS-based architecture to:
-- Ingest and transform financial data,
-- Store it in a structured warehouse, and
-- Generate ML-driven bankruptcy predictions using **SageMaker Canvas**.
+As an analyst for **MSBA Financial Group**, I was tasked with building a prototype cloud-native data architecture in AWS. MSBA receives financial data from three different internal sources:
 
-The entire pipeline is **built and deployed using AWS-native services**—no Python, SQL, or scripting used.
+- **Vendor Data** from DataCorp: `datacorp_financial_data.csv`
+- **Analyst A Ratios**: `msba_fg_ratios_data.csv`
+- **Analyst B Bankruptcy Records**: `msba_fg_bankruptcy.txt`
 
-This project helped me:
-- Demonstrate fluency in AWS services like S3, Glue, Redshift, and SageMaker
-- Practice presenting cloud-native workflows to non-technical audiences
-- Deliver a production-ready pipeline that outputs clear, actionable predictions
+The new CIO requested a centralized and scalable system that would:
 
----
+- Ingest raw financial data from various sources and formats
+- Consolidate it into a centralized data warehouse
+- Enable easy future automation and scalability
+- Perform exploratory data analysis (EDA)
+- Train and apply a machine learning model to predict bankruptcy risk
+- Score 10 new companies being considered for a portfolio
 
-## 🧰 Tools & Services
-
-| Service             | Purpose                                                      |
-|---------------------|--------------------------------------------------------------|
-| **Amazon S3**       | Stores raw input files and final prediction outputs          |
-| **AWS Glue Studio** | Performs serverless ETL (joins, cleaning, transformation)    |
-| **Amazon Redshift** | Warehouses processed financial data for querying             |
-| **Amazon SageMaker Canvas** | Trains and deploys machine learning models without code |
-| **Canvas Export**   | Generates bankruptcy prediction output as CSV or PNG         |
+This system was developed entirely within **AWS Console tools**: S3, Glue, Redshift, and SageMaker Canvas.
 
 ---
 
-## 🗺 Architecture Overview
+## 🧰 Tools & Services Used
 
-Here’s a visual representation of my pipeline from raw files to final predictions:
-
-![AWS Pipeline Architecture](./Picture1.png)
-
-### Process Flow:
-1. **Input Files**: CSVs and TXT data are uploaded to an S3 bucket.
-2. **Glue ETL**: AWS Glue processes and joins the files into a clean dataset.
-3. **Redshift**: The output is stored in a Redshift cluster for easy access.
-4. **SageMaker Canvas**: Canvas pulls data from Redshift and trains an ML model.
-5. **Predictions**: Bankruptcy scores are exported from Canvas back to S3.
+| AWS Service              | Role                                                         |
+|--------------------------|--------------------------------------------------------------|
+| **Amazon S3**            | Stores raw data and model outputs                            |
+| **AWS Glue Studio**      | Visual ETL to join, clean, and transform financial datasets  |
+| **Amazon Redshift**      | Data warehouse for consolidated analytics-ready tables       |
+| **Amazon SageMaker Canvas** | No-code tool for EDA and training a classification model  |
 
 ---
 
-## 📁 Data Sources
+## 🗺 Architecture Diagram
 
-- `datacorp_financial_data.csv`
-- `msba_fg_ratios_data.csv`
-- `msba_fg_bankruptcy.txt`
-- `company_profiles_to_predict_unlabeled.csv`
+![AWS Pipeline Architecture](./ff8e00d3-b89e-4fdf-810d-38d3e107567e.png)
 
-These datasets were used to train and score financial entities.
+### Step-by-Step Data Flow:
+1. Data from three sources is uploaded to **Amazon S3**
+2. **AWS Glue** joins and transforms the data into clean datasets
+3. Transformed data is loaded into **Redshift** for storage and analysis
+4. **SageMaker Canvas** connects to Redshift to:
+   - Perform EDA
+   - Train a machine learning model
+   - Predict bankruptcy risk
+5. Output files are saved back to S3 for reporting and decision-making
 
 ---
 
-## ✅ Recommendations
+## 📁 Data Files
 
-### 👍 Included in Portfolio:
+- `datacorp_financial_data.csv`: Balance sheet and income statement data
+- `msba_fg_ratios_data.csv`: Analyst-calculated financial ratios
+- `msba_fg_bankruptcy.txt`: Company bankruptcy outcomes
+- `company_profiles_to_predict_unlabeled.csv`: 10 target companies for scoring
+- `MSBA_Financial_Group_Data_Dictionary.pdf`: Definitions for all fields
+
+---
+
+## 📊 Model Insights & Predictions
+
+I used SageMaker Canvas to perform auto-EDA and train a model that classifies bankruptcy risk. The model learned from historical financial and bankruptcy data.
+
+### 📌 Key EDA Insights
+- Companies with **sustained positive EPS** and **higher net income-to-assets** ratios showed lower risk.
+- **Volatile earnings** or frequent losses were highly predictive of bankruptcy.
+
+### ✅ Model-Based Recommendations
+
+**Recommended for Inclusion:**
 - Pharmasolve  
 - Ninetech  
 - Songster Inc  
@@ -69,30 +81,30 @@ These datasets were used to train and score financial entities.
 - Foster & Kruse  
 - Highwood & Hart  
 
-### ❌ Excluded from Portfolio:
+**Not Recommended:**
 - Western Corp  
 - Design Solutions  
 - Innocore  
 
-Prediction outputs were exported from SageMaker Canvas as `.csv` and `.png`.
+Prediction files were exported as `.csv` and `.png` to Amazon S3.
 
 ---
 
-## 🚀 Deployment Highlights
+## 🛠 Runbook (No Code)
 
-- **Zero Code**: All steps configured via AWS Console
-- **ETL Automation**: Done in AWS Glue Studio (visual workflows)
-- **ML Modeling**: Built using SageMaker Canvas’ AutoML interface
-- **Storage**: Raw and predicted data stored securely in S3
-- **Scalable Design**: Redshift and Glue designed to support growing datasets
+To replicate the workflow:
+1. Upload data files to the S3 bucket `msba-fingroup-444`
+2. Run ETL in AWS Glue via visual job `Final_ETL`
+3. Query and explore in Redshift cluster `msba-fingroup-cluster`
+4. Use SageMaker Canvas to train & evaluate model, then export predictions
 
 ---
 
 ## 🔭 Future Enhancements
 
-- Schedule recurring Glue jobs via triggers or EventBridge
-- Use QuickSight to visualize bankruptcy predictions in dashboards
-- Deploy model scoring pipelines using SageMaker Pipelines
-- Enable stakeholder-friendly access to outputs
+- Automate Glue ETL via triggers or AWS EventBridge
+- Use Amazon QuickSight for real-time visualization dashboards
+- Deploy SageMaker Pipelines for ongoing model updates
+- Build a stakeholder-friendly reporting layer
 
 ---
