@@ -8,9 +8,9 @@ Hi, I’m Aupala Bhattacharyya! This project is a cloud-native data pipeline I d
 
 As an analyst for **MSBA Financial Group**, I was tasked with building a prototype cloud-native data architecture in AWS. MSBA receives financial data from three different internal sources:
 
-- **Vendor Data** from DataCorp: `datacorp_financial_data.csv`
-- **Analyst A Ratios**: `msba_fg_ratios_data.csv`
-- **Analyst B Bankruptcy Records**: `msba_fg_bankruptcy.txt`
+- **Vendor Data** from DataCorp: ./datacorp_financial_data.csv
+- **Analyst A Ratios**: ./msba_fg_ratios_data.csv
+- **Analyst B Bankruptcy Records**: ./msba_fg_bankruptcy.txt
 
 The new CIO requested a centralized and scalable system that would:
 
@@ -38,7 +38,7 @@ This system was developed entirely within **AWS Console tools**: S3, Glue, Redsh
 
 ## 🗺 Architecture Diagram
 
-![AWS Pipeline Architecture](./ff8e00d3-b89e-4fdf-810d-38d3e107567e.png)
+![AWS Pipeline Architecture](./Picture1.png)
 
 ### Step-by-Step Data Flow:
 1. Data from three sources is uploaded to **Amazon S3**
