@@ -67,6 +67,7 @@ This system was developed entirely within **AWS Console tools**: S3, Glue, Redsh
 I used SageMaker Canvas to perform auto-EDA and train a model that classifies bankruptcy risk. The model learned from historical financial and bankruptcy data.
 
 ### 📌 Key EDA Insights
+![EDA_Insights](./EDA.png)
 - Companies with **sustained positive EPS** and **higher net income-to-assets** ratios showed lower risk.
 - **Volatile earnings** or frequent losses were highly predictive of bankruptcy.
 
@@ -87,7 +88,7 @@ I used SageMaker Canvas to perform auto-EDA and train a model that classifies ba
 - Innocore  
 
 Prediction files were exported as `.csv` and `.png` to Amazon S3.
-
+[Reccomendations](./CT_Aupala (1).pptx)
 ---
 
 ## 🛠 Runbook (No Code)
