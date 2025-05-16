@@ -88,6 +88,7 @@ I used SageMaker Canvas to perform auto-EDA and train a model that classifies ba
 - Innocore  
 
 Prediction files were exported as `.csv` and `.png` to Amazon S3.
+
 [Reccomendations](./CT_Aupala (1).pptx)
 ---
 
