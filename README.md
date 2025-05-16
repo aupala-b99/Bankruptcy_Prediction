@@ -65,6 +65,7 @@ This system was developed entirely within **AWS Console tools**: S3, Glue, Redsh
 ## 📊 Model Insights & Predictions
 
 I used SageMaker Canvas to perform auto-EDA and train a model that classifies bankruptcy risk. The model learned from historical financial and bankruptcy data.
+
 ![Sage1](./Sage1.png)
 ![Sage2](./Sage2.png)
 ![Sage3](./Sage3.png)
