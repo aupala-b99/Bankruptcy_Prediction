@@ -68,11 +68,12 @@ I used SageMaker Canvas to perform auto-EDA and train a model that classifies ba
 
 ### 📌 Key EDA Insights
 ![EDA_Insights](./EDA.png)
+![EDA2](./EDA2.png)
 - Companies with **sustained positive EPS** and **higher net income-to-assets** ratios showed lower risk.
 - **Volatile earnings** or frequent losses were highly predictive of bankruptcy.
 
 ### ✅ Model-Based Recommendations
-
+![Output](./Output.png)
 **Recommended for Inclusion:**
 - Pharmasolve  
 - Ninetech  
